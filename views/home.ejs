@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ToDo List</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css\styles.css" />
+  </head>
+  <body>
+    <form action="login_submit" method="post">
+      <fieldset class="todo-list">
+       
+        <legend class="todo-list__title">Todo List</legend>
+        <input class="todo-list_input" type="text" name="new_todo" placeholder="Add new todo item" />
+        <button type="submit">Add Todo Item</button>
+        <% data.forEach(item => { %>
+        <label class="todo-list__label">
+          <input type="checkbox" name="todo[]" value="<%= item.task %>" />
+          <i class="check"></i>
+          <span><%= item.task %></span>
+        </label>
+        <% }) %>
+        
+        </fieldset>
+    </form>
+
+    
+
+  </body>
+</html>
